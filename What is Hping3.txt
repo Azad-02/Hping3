@@ -1,0 +1,41 @@
+What is Hping3?
+
+Hping-3 is a tool that is pre-installed in a kali machine and In simple words, the tool can send packets throughout the network 
+and could see the flow of the network in an organisation.
+By sending the packets throughout the network the red team members will identify any problem in the network and even check for the firewall.
+
+
+What all the hping3 tool can do?
+
+1. Firewall testing
+2. Advanced port scanning
+3. Network testing.
+4. MTU discovery (Manual path discovery)
+5. Advanced traceroute,(All protocols are supported)
+6. Remote OS fingerprinting
+7. Remote uptime guessing
+8. TCP/IP stacks auditing
+9. hping can also be useful to students that are learning TCP/IP
+
+
+Useful commands in hping3 tool
+
+-c –count: packet count
+–faster: alias for -i u1000 (100 packets for second)
+–flood: sent packets as fast as possible. Don’t show replies.
+-V –verbose: verbose mode
+-0 –rawip: RAW IP mode
+-1  –icmp: ICMP mode
+-2 –udp: UDP mode
+-8 –scan: SCAN mode.
+-9 –listen: listen mode
+-a –spoof: spoof source address
+-C –icmptype: icmp type
+-K –icmpcode: icmp code
+-L –setack: set TCP ack
+-F –fin: set FIN flag
+-S  –syn: set SYN flag
+-R  –rst: set RST flag
+-A –ack: set ACK flag
+-X –xmas: set X unused flag (0x40)
+-Y –ymas: set Y unused flag (0x80)
