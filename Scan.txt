@@ -1,0 +1,103 @@
+-> STANDARD SCAN
+
+
+Send SYN packets to the target IP address
+
+ 	hping3 -S 192.168.149.1 
+
+In the place of -S you could add
+
+-L –setack set TCP ack
+-F –fin set FIN flag
+-S –syn set SYN flag
+-R –rst set RST flag
+-P –push set PUSH flag
+-A –ack set ACK flag
+-U –urg set URG flag
+-X –xmas set X unused flag (0x40)
+-Y –ymas set Y unused flag (0x80)
+
+-V -Verbose (Detailed) - (hping3 -S 192.169.149.1 -V)
+
+
+-> PORT SCAN
+
+
+Specifyiing Port Number
+
+	hping3 -S 192.168.149.1 -p 80
+
+-p for specifying the port
+-S can be changed to any protocol mentioned above
+
+
+-> Number of Packets
+
+
+specifying how many packets to send.
+
+	hping3 -S 192.168.149.1 -p 80 -c 5 
+
+-S SYN flag
+-p Specify the port
+-c No of packets to send
+
+
+-PACKETS
+
+-0 Raw IP Address
+-1 	  ICMP Packets
+-2 	  UDP Packets
+-8 4-100  Between Port Scan
+-9 	  Listen Mode
+
+
+-> TCP Packets
+	hping3 192.168.149.1 
+
+
+-> Raw IP address packets
+	hping3 -0 192.168.149.1
+
+
+-> ICMP Packets
+	hping3 -1 192.168.149.1
+
+
+-> UDP Packets
+	hping3 -2 192.168.149.1
+
+
+-> Between port scan
+	hping3 -8 1-30 -A 192.168.149.1
+
+
+-> Listen Mode
+	hping3 -9 192.169.149.1
+
+
+-> Specifying Ports
+	hping3 -1 192.168.149.1 -p 80
+-1 can vary with other options (-0, -2 etc)
+
+
+-> Sequence Number
+	hping3 192.168.1.103 -Q -p 139 
+
+
+-> Firewalls and Timestamps
+	hping3 -S 72.14.207.99 -p 80 --tcp-timestamp
+
+
+-> Scanning entire Subnet for Live Host
+	hping3 -1 10.0.1.x --rand-dest –I eth0
+
+
+-> Intercepting all traffic containing HTTP signatures
+	hping3 -9 HTTP -I eth0 
+
+
+-> 
+
+
+
